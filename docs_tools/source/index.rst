@@ -3,8 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to translator's documentation!
+Welcome to Tkit Readability's documentation!
 ======================================
+Tkit Readability 是一个专注于ｈｔｍｌ中提取文本的包。
 
 .. toctree::
    :maxdepth: 2

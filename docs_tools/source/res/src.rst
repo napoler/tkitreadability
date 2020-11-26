@@ -4,10 +4,10 @@ src package
 Submodules
 ----------
 
-src.demo module
----------------
+src.tkitreadability module
+--------------------------
 
-.. automodule:: src.demo
+.. automodule:: src.tkitreadability
    :members:
    :undoc-members:
    :show-inheritance:

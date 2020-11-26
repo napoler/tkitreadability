@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>src package &#8212; Demo 0.1 文档</title>
+    <title>src package &#8212; Tkit Readability 0.1 文档</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -58,7 +58,7 @@
 <a class="navbar-brand text-wrap" href="../index.html">
   
   
-  <h1 class="site-logo" id="site-title">Demo 0.1 文档</h1>
+  <h1 class="site-logo" id="site-title">Tkit Readability 0.1 文档</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -157,8 +157,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-src.demo">
-   src.demo module
+  <a class="reference internal nav-link" href="#module-src.tkitreadability">
+   src.tkitreadability module
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -182,16 +182,68 @@
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="永久链接至标题">¶</a></h2>
 </div>
-<div class="section" id="module-src.demo">
-<span id="src-demo-module"></span><h2>src.demo module<a class="headerlink" href="#module-src.demo" title="永久链接至标题">¶</a></h2>
+<div class="section" id="module-src.tkitreadability">
+<span id="src-tkitreadability-module"></span><h2>src.tkitreadability module<a class="headerlink" href="#module-src.tkitreadability" title="永久链接至标题">¶</a></h2>
 <dl class="py class">
-<dt id="src.demo.Demo">
-<em class="property">class </em><code class="sig-prename descclassname">src.demo.</code><code class="sig-name descname">Demo</code><a class="reference internal" href="../_modules/src/demo.html#Demo"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.demo.Demo" title="永久链接至目标">¶</a></dt>
+<dt id="src.tkitreadability.tkitReadability">
+<em class="property">class </em><code class="sig-prename descclassname">src.tkitreadability.</code><code class="sig-name descname">tkitReadability</code><a class="headerlink" href="#src.tkitreadability.tkitReadability" title="永久链接至目标">¶</a></dt>
 <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>一个正文提取类，优化提取流程
+&gt;&gt;&gt; tkitＲeadability()</p>
 <dl class="py method">
-<dt id="src.demo.Demo.fun">
-<code class="sig-name descname">fun</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/src/demo.html#Demo.fun"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.demo.Demo.fun" title="永久链接至目标">¶</a></dt>
-<dd></dd></dl>
+<dt id="src.tkitreadability.tkitReadability.clear">
+<code class="sig-name descname">clear</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">string</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.tkitreadability.tkitReadability.clear" title="永久链接至目标">¶</a></dt>
+<dd><p>清理多余空格</p>
+<p>清理多余的换行空格等</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">clear</span><span class="p">(</span><span class="s1">&#39;这里似乎内        容不给&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="src.tkitreadability.tkitReadability.filter_tags">
+<code class="sig-name descname">filter_tags</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">htmlstr</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.tkitreadability.tkitReadability.filter_tags" title="永久链接至目标">¶</a></dt>
+<dd><p>清理掉html代码</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">filter_tags</span><span class="p">(</span><span class="n">htmlstr</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="src.tkitreadability.tkitReadability.html2text">
+<code class="sig-name descname">html2text</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">html</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.tkitreadability.tkitReadability.html2text" title="永久链接至目标">¶</a></dt>
+<dd><p>从html中提取正文</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">html2text</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="src.tkitreadability.tkitReadability.remove_HTML_tag">
+<code class="sig-name descname">remove_HTML_tag</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">string</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.tkitreadability.tkitReadability.remove_HTML_tag" title="永久链接至目标">¶</a></dt>
+<dd><p>删除特定的标签</p>
+<p># 删除掉图片
+&gt;&gt;&gt; tag =’img’
+&gt;&gt;&gt; string =’’’</p>
+<blockquote>
+<div><p>萌照镇楼。</p>
+<p>&lt;img data-rawwidth=”1393” data-rawheight=”1104”
+src=”<a class="reference external" href="https://pic3.zhimg.com/50/63f68657ef2e5c22fef8b982a141cfd0_hd.jpg">https://pic3.zhimg.com/50/63f68657ef2e5c22fef8b982a141cfd0_hd.jpg</a>”
+class=”origin_image zh-lightbox-thumb” width=”1393” data-
+original=”<a class="reference external" href="https://pic3.zhimg.com/63f68657ef2e5c22fef8b982a141cfd0_r.jpg">https://pic3.zhimg.com/63f68657ef2e5c22fef8b982a141cfd0_r.jpg</a>”/&gt;</p>
+<p>母犬发情期的主要特征：</p>
+<p>‘’’</p>
+</div></blockquote>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">remove_HTML_tag</span><span class="p">(</span><span class="n">tag</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="src.tkitreadability.tkitReadability.remove_word_wrap">
+<code class="sig-name descname">remove_word_wrap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">html</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.tkitreadability.tkitReadability.remove_word_wrap" title="永久链接至目标">¶</a></dt>
+<dd><p>删除多余的换行</p>
+</dd></dl>
 
 </dd></dl>
 

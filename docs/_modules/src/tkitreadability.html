@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>src.tkitreadability &#8212; Tkit Readability 0.1 文档</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Tkit Readability 0.1 文档</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Contents:
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../res/modules.html">
+   src
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../res/src.html">
+     src package
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <h1>src.tkitreadability 源代码</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="kn">from</span> <span class="nn">readability</span> <span class="kn">import</span> <span class="n">Document</span>
+<span class="kn">import</span> <span class="nn">html2text</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">这是一个提取正文的类</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="k">class</span> <span class="nc">tkitＲeadability</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    一个正文提取类，优化提取流程</span>
+<span class="sd">    &gt;&gt;&gt; tkitＲeadability()</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+    <span class="k">def</span> <span class="nf">html2text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">html</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;从html中提取正文</span>
+
+<span class="sd">        &gt;&gt;&gt; html2text(html)</span>
+
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># response = requests.get(url)</span>
+        <span class="c1"># logging.info(response.text)</span>
+        <span class="c1"># html = request.urlopen(url)</span>
+
+        <span class="c1"># logging.info(html)</span>
+
+        <span class="n">doc</span> <span class="o">=</span> <span class="n">Document</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+        <span class="c1"># doc = Document(html)</span>
+        <span class="c1"># logging.info(doc.title())</span>
+        <span class="k">try</span><span class="p">:</span>
+          <span class="n">html</span><span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+          <span class="k">return</span> <span class="s1">&#39;&#39;</span>
+        <span class="c1">#   logging.info(doc.get_clean_html())</span>
+        <span class="c1"># t =html2text.html2text(html)</span>
+        <span class="n">text_maker</span> <span class="o">=</span> <span class="n">html2text</span><span class="o">.</span><span class="n">HTML2Text</span><span class="p">()</span>
+        <span class="n">text_maker</span><span class="o">.</span><span class="n">ignore_links</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">text_maker</span><span class="o">.</span><span class="n">bypass_tables</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">text_maker</span><span class="o">.</span><span class="n">ignore_images</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">text_maker</span><span class="o">.</span><span class="n">images_to_alt</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="c1"># html = function_to_get_some_html()</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">text_maker</span><span class="o">.</span><span class="n">handle</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+        <span class="c1"># text=self.remove_HTML_tag(&#39;img&#39;,text)</span>
+        <span class="c1"># print(text)</span>
+        <span class="k">return</span> <span class="n">text</span>
+    <span class="k">def</span> <span class="nf">remove_HTML_tag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">tag</span><span class="p">,</span> <span class="n">string</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;删除特定的标签</span>
+
+<span class="sd">        # 删除掉图片</span>
+<span class="sd">        &gt;&gt;&gt; tag =&#39;img&#39;</span>
+<span class="sd">        &gt;&gt;&gt; string =&#39;&#39;&#39;</span>
+<span class="sd">          萌照镇楼。\n</span>
+
+<span class="sd">          &lt;img data-rawwidth=&quot;1393&quot; data-rawheight=&quot;1104&quot;</span>
+<span class="sd">          src=&quot;https://pic3.zhimg.com/50/63f68657ef2e5c22fef8b982a141cfd0_hd.jpg&quot;</span>
+<span class="sd">          class=&quot;origin_image zh-lightbox-thumb&quot; width=&quot;1393&quot; data-</span>
+<span class="sd">          original=&quot;https://pic3.zhimg.com/63f68657ef2e5c22fef8b982a141cfd0_r.jpg&quot;/&gt;</span>
+
+<span class="sd">          母犬发情期的主要特征：</span>
+
+<span class="sd">          &#39;&#39;&#39;</span>
+
+<span class="sd">        &gt;&gt;&gt; remove_HTML_tag(tag, string)</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">string</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;&lt;\b(&quot;</span> <span class="o">+</span> <span class="n">tag</span> <span class="o">+</span> <span class="sa">r</span><span class="s2">&quot;)\b[^&gt;]*&gt;&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;&lt;\/\b(&quot;</span> <span class="o">+</span> <span class="n">tag</span> <span class="o">+</span> <span class="sa">r</span><span class="s2">&quot;)\b[^&gt;]*&gt;&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">filter_tags</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">htmlstr</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;清理掉html代码</span>
+
+<span class="sd">        &gt;&gt;&gt; filter_tags(htmlstr)</span>
+
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">re_doctype</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;&lt;![DOCTYPE|doctype].*&gt;&#39;</span><span class="p">)</span>
+        <span class="n">re_nav</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;&lt;nav.+&lt;/nav&gt;&#39;</span><span class="p">)</span>
+        <span class="n">re_cdata</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;//&lt;!\[CDATA\[.*//\]\]&gt;&#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span><span class="p">)</span>
+        <span class="n">re_script</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+            <span class="s1">&#39;&lt;\s*script[^&gt;]*&gt;.*?&lt;\s*/\s*script\s*&gt;&#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span> <span class="o">|</span> <span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">)</span>
+        <span class="n">re_style</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+            <span class="s1">&#39;&lt;\s*style[^&gt;]*&gt;.*?&lt;\s*/\s*style\s*&gt;&#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span> <span class="o">|</span> <span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">)</span>
+        <span class="n">re_textarea</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+            <span class="s1">&#39;&lt;\s*textarea[^&gt;]*&gt;.*?&lt;\s*/\s*textarea\s*&gt;&#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span> <span class="o">|</span> <span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">)</span>
+        <span class="n">re_br</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;&lt;br\s*?/?&gt;&#39;</span><span class="p">)</span>
+        <span class="n">re_h</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;&lt;/?\w+.*?&gt;&#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span><span class="p">)</span>
+        <span class="n">re_comment</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;&lt;!--.*?--&gt;&#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span><span class="p">)</span>
+        <span class="n">re_space</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39; +&#39;</span><span class="p">)</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">re_cdata</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">htmlstr</span><span class="p">)</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">re_doctype</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">s</span><span class="p">)</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">re_nav</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">re_script</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">re_style</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">re_textarea</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">re_br</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">re_h</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">re_comment</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">t&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">re_space</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">replaceCharEntity</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">s</span>
+    <span class="k">def</span> <span class="nf">remove_word_wrap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">html</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;删除多余的换行</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">nt</span> <span class="o">=</span>  <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;[</span><span class="se">\n</span><span class="s1">]+&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">html</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">nt</span>
+    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">string</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;清理多余空格</span>
+
+<span class="sd">        清理多余的换行空格等</span>
+
+<span class="sd">        &gt;&gt;&gt; clear(&#39;这里似乎内\t容不给&#39;)</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># return string.strip()</span>
+        <span class="c1"># for line in string.readlines():</span>
+        <span class="c1"># string = re.sub(&#39;[\n]+&#39;, &#39;\n&#39;, string)</span>
+        <span class="n">string</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+            <span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;   &#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="c1"># string = string.replace(&#39;\n\n&#39;, &#39; &#39;).replace(&#39;\n&#39;, &#39;&#39;)</span>
+        <span class="n">string</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39; +&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">string</span>
+</pre></div>
+
+              </div>
+              
+        
+                        <div id="lv-container" data-id="city" data-uid="MTAyMC80OTg1OS8yNjM1MA==">
+                            <script type="4097e126b712b9dab1f8fc00-text/javascript">
+                                 (function(d, s) {
+                                     var j, e = d.getElementsByTagName(s)[0];
+                              
+                                     if (typeof LivereTower === 'function') { return; }
+                              
+                                     j = d.createElement(s);
+                                     j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                                     j.async = true;
+                              
+                                     e.parentNode.insertBefore(j, e);
+                                 })(document, 'script');
+                              </script>
+                            <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>        
+        
+        
+        
+        
+        
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+ 
+    <div class="container">
+      <p>
+        
+          By Terry Chan<br/>
+        
+            &copy; Copyright <a href="/">2020, Terry Chan.</a><br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
