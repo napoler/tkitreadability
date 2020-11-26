@@ -7,7 +7,7 @@ import re
 
 """
 
-class tkitＲeadability:
+class tkitReadability:
     """
     一个正文提取类，优化提取流程
     >>> tkitＲeadability()
