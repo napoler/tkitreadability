@@ -1,0 +1,2 @@
+html2text==2020.1.16
+readability_lxml==0.8.1

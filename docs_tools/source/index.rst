@@ -8,6 +8,12 @@ Welcome to Tkit Readability's documentation!
 
 Tkit Readability 是一个专注于ｈｔｍｌ中提取文本的包。
 
+安装
+
+```
+pip install tkitreadability
+```
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
