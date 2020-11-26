@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>src.tkitreadability &#8212; Tkit Readability 0.1 文档</title>
+    <title>tkitreadability.tkitreadability &#8212; Tkit Readability 0.1 文档</title>
     
   <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -135,7 +135,7 @@
         
               <div>
                 
-  <h1>src.tkitreadability 源代码</h1><div class="highlight"><pre>
+  <h1>tkitreadability.tkitreadability 源代码</h1><div class="highlight"><pre>
 <span></span><span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="kn">from</span> <span class="nn">readability</span> <span class="kn">import</span> <span class="n">Document</span>
 <span class="kn">import</span> <span class="nn">html2text</span>
@@ -145,7 +145,7 @@
 
 <span class="sd">&quot;&quot;&quot;</span>
 
-<span class="k">class</span> <span class="nc">tkitＲeadability</span><span class="p">:</span>
+<div class="viewcode-block" id="tkitReadability"><a class="viewcode-back" href="../../res/tkitreadability.html#tkitreadability.tkitreadability.tkitReadability">[文档]</a><span class="k">class</span> <span class="nc">tkitReadability</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    一个正文提取类，优化提取流程</span>
 <span class="sd">    &gt;&gt;&gt; tkitＲeadability()</span>
@@ -153,7 +153,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">pass</span>
-    <span class="k">def</span> <span class="nf">html2text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">html</span><span class="p">):</span>
+<div class="viewcode-block" id="tkitReadability.html2text"><a class="viewcode-back" href="../../res/tkitreadability.html#tkitreadability.tkitreadability.tkitReadability.html2text">[文档]</a>    <span class="k">def</span> <span class="nf">html2text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">html</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;从html中提取正文</span>
 
 <span class="sd">        &gt;&gt;&gt; html2text(html)</span>
@@ -184,8 +184,8 @@
         <span class="n">text</span> <span class="o">=</span> <span class="n">text_maker</span><span class="o">.</span><span class="n">handle</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
         <span class="c1"># text=self.remove_HTML_tag(&#39;img&#39;,text)</span>
         <span class="c1"># print(text)</span>
-        <span class="k">return</span> <span class="n">text</span>
-    <span class="k">def</span> <span class="nf">remove_HTML_tag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">tag</span><span class="p">,</span> <span class="n">string</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">text</span></div>
+<div class="viewcode-block" id="tkitReadability.remove_HTML_tag"><a class="viewcode-back" href="../../res/tkitreadability.html#tkitreadability.tkitreadability.tkitReadability.remove_HTML_tag">[文档]</a>    <span class="k">def</span> <span class="nf">remove_HTML_tag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">tag</span><span class="p">,</span> <span class="n">string</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;删除特定的标签</span>
 
 <span class="sd">        # 删除掉图片</span>
@@ -206,8 +206,8 @@
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">string</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;&lt;\b(&quot;</span> <span class="o">+</span> <span class="n">tag</span> <span class="o">+</span> <span class="sa">r</span><span class="s2">&quot;)\b[^&gt;]*&gt;&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;&lt;\/\b(&quot;</span> <span class="o">+</span> <span class="n">tag</span> <span class="o">+</span> <span class="sa">r</span><span class="s2">&quot;)\b[^&gt;]*&gt;&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">filter_tags</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">htmlstr</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;&lt;\/\b(&quot;</span> <span class="o">+</span> <span class="n">tag</span> <span class="o">+</span> <span class="sa">r</span><span class="s2">&quot;)\b[^&gt;]*&gt;&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span></div>
+<div class="viewcode-block" id="tkitReadability.filter_tags"><a class="viewcode-back" href="../../res/tkitreadability.html#tkitreadability.tkitreadability.tkitReadability.filter_tags">[文档]</a>    <span class="k">def</span> <span class="nf">filter_tags</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">htmlstr</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;清理掉html代码</span>
 
 <span class="sd">        &gt;&gt;&gt; filter_tags(htmlstr)</span>
@@ -239,14 +239,14 @@
         <span class="n">s</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">t&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
         <span class="n">s</span> <span class="o">=</span> <span class="n">re_space</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
         <span class="n">s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">replaceCharEntity</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">s</span>
-    <span class="k">def</span> <span class="nf">remove_word_wrap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">html</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">s</span></div>
+<div class="viewcode-block" id="tkitReadability.remove_word_wrap"><a class="viewcode-back" href="../../res/tkitreadability.html#tkitreadability.tkitreadability.tkitReadability.remove_word_wrap">[文档]</a>    <span class="k">def</span> <span class="nf">remove_word_wrap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">html</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;删除多余的换行</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">nt</span> <span class="o">=</span>  <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;[</span><span class="se">\n</span><span class="s1">]+&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">html</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">nt</span>
-    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">string</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">nt</span></div>
+<div class="viewcode-block" id="tkitReadability.clear"><a class="viewcode-back" href="../../res/tkitreadability.html#tkitreadability.tkitreadability.tkitReadability.clear">[文档]</a>    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">string</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;清理多余空格</span>
 
 <span class="sd">        清理多余的换行空格等</span>
@@ -262,7 +262,7 @@
             <span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;   &#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
         <span class="c1"># string = string.replace(&#39;\n\n&#39;, &#39; &#39;).replace(&#39;\n&#39;, &#39;&#39;)</span>
         <span class="n">string</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39; +&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">string</span>
+        <span class="k">return</span> <span class="n">string</span></div></div>
 </pre></div>
 
               </div>

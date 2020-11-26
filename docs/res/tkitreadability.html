@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tkitreadability package &#8212; Tkit Readability 0.1 文档</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="prev" title="tkitreadability" href="modules.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Tkit Readability 0.1 文档</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Contents:
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="modules.html">
+   tkitreadability
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     tkitreadability package
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/res/tkitreadability.rst.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submodules">
+   Submodules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-tkitreadability.tkitreadability">
+   tkitreadability.tkitreadability module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-tkitreadability">
+   Module contents
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="tkitreadability-package">
+<h1>tkitreadability package<a class="headerlink" href="#tkitreadability-package" title="永久链接至标题">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="module-tkitreadability.tkitreadability">
+<span id="tkitreadability-tkitreadability-module"></span><h2>tkitreadability.tkitreadability module<a class="headerlink" href="#module-tkitreadability.tkitreadability" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="tkitreadability.tkitreadability.tkitReadability">
+<em class="property">class </em><code class="sig-prename descclassname">tkitreadability.tkitreadability.</code><code class="sig-name descname">tkitReadability</code><a class="reference internal" href="../_modules/tkitreadability/tkitreadability.html#tkitReadability"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#tkitreadability.tkitreadability.tkitReadability" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>一个正文提取类，优化提取流程
+&gt;&gt;&gt; tkitＲeadability()</p>
+<dl class="py method">
+<dt id="tkitreadability.tkitreadability.tkitReadability.clear">
+<code class="sig-name descname">clear</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">string</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tkitreadability/tkitreadability.html#tkitReadability.clear"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#tkitreadability.tkitreadability.tkitReadability.clear" title="永久链接至目标">¶</a></dt>
+<dd><p>清理多余空格</p>
+<p>清理多余的换行空格等</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">clear</span><span class="p">(</span><span class="s1">&#39;这里似乎内        容不给&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tkitreadability.tkitreadability.tkitReadability.filter_tags">
+<code class="sig-name descname">filter_tags</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">htmlstr</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tkitreadability/tkitreadability.html#tkitReadability.filter_tags"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#tkitreadability.tkitreadability.tkitReadability.filter_tags" title="永久链接至目标">¶</a></dt>
+<dd><p>清理掉html代码</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">filter_tags</span><span class="p">(</span><span class="n">htmlstr</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tkitreadability.tkitreadability.tkitReadability.html2text">
+<code class="sig-name descname">html2text</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">html</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tkitreadability/tkitreadability.html#tkitReadability.html2text"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#tkitreadability.tkitreadability.tkitReadability.html2text" title="永久链接至目标">¶</a></dt>
+<dd><p>从html中提取正文</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">html2text</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tkitreadability.tkitreadability.tkitReadability.remove_HTML_tag">
+<code class="sig-name descname">remove_HTML_tag</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">string</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tkitreadability/tkitreadability.html#tkitReadability.remove_HTML_tag"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#tkitreadability.tkitreadability.tkitReadability.remove_HTML_tag" title="永久链接至目标">¶</a></dt>
+<dd><p>删除特定的标签</p>
+<p># 删除掉图片
+&gt;&gt;&gt; tag =’img’
+&gt;&gt;&gt; string =’’’</p>
+<blockquote>
+<div><p>萌照镇楼。</p>
+<p>&lt;img data-rawwidth=”1393” data-rawheight=”1104”
+src=”<a class="reference external" href="https://pic3.zhimg.com/50/63f68657ef2e5c22fef8b982a141cfd0_hd.jpg">https://pic3.zhimg.com/50/63f68657ef2e5c22fef8b982a141cfd0_hd.jpg</a>”
+class=”origin_image zh-lightbox-thumb” width=”1393” data-
+original=”<a class="reference external" href="https://pic3.zhimg.com/63f68657ef2e5c22fef8b982a141cfd0_r.jpg">https://pic3.zhimg.com/63f68657ef2e5c22fef8b982a141cfd0_r.jpg</a>”/&gt;</p>
+<p>母犬发情期的主要特征：</p>
+<p>‘’’</p>
+</div></blockquote>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">remove_HTML_tag</span><span class="p">(</span><span class="n">tag</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="tkitreadability.tkitreadability.tkitReadability.remove_word_wrap">
+<code class="sig-name descname">remove_word_wrap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">html</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tkitreadability/tkitreadability.html#tkitReadability.remove_word_wrap"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#tkitreadability.tkitreadability.tkitReadability.remove_word_wrap" title="永久链接至目标">¶</a></dt>
+<dd><p>删除多余的换行</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tkitreadability">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-tkitreadability" title="永久链接至标题">¶</a></h2>
+</div>
+</div>
+
+
+              </div>
+              
+        
+                        <div id="lv-container" data-id="city" data-uid="MTAyMC80OTg1OS8yNjM1MA==">
+                            <script type="4097e126b712b9dab1f8fc00-text/javascript">
+                                 (function(d, s) {
+                                     var j, e = d.getElementsByTagName(s)[0];
+                              
+                                     if (typeof LivereTower === 'function') { return; }
+                              
+                                     j = d.createElement(s);
+                                     j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                                     j.async = true;
+                              
+                                     e.parentNode.insertBefore(j, e);
+                                 })(document, 'script');
+                              </script>
+                            <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>        
+        
+        
+        
+        
+        
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="modules.html" title="previous page">tkitreadability</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+ 
+    <div class="container">
+      <p>
+        
+          By Terry Chan<br/>
+        
+            &copy; Copyright <a href="/">2020, Terry Chan.</a><br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
