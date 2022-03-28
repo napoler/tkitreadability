@@ -53,15 +53,7 @@ class tkitReadability:
         # 删除掉图片
         >>> tag ='img'
         >>> string ='''
-          萌照镇楼。\n
-
-          <img data-rawwidth="1393" data-rawheight="1104"
-          src="https://pic3.zhimg.com/50/63f68657ef2e5c22fef8b982a141cfd0_hd.jpg"
-          class="origin_image zh-lightbox-thumb" width="1393" data-
-          original="https://pic3.zhimg.com/63f68657ef2e5c22fef8b982a141cfd0_r.jpg"/>
-
-          母犬发情期的主要特征：
-
+   
           '''
 
         >>> remove_HTML_tag(tag, string)
