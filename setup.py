@@ -24,17 +24,18 @@ def read_requirements(filename):
 long_description=read_file("README.md")
 setup(
     name='tkitreadability', #修改包名字
-    version='0.0.0.3',
+    version='0.0.0.5.1',
     description='Terry toolkit tkitreadability',
     author='Terry Chan',
     author_email='napoler2008@gmail.com',
-    url='https://www.terrychan.org/tkitreadability/',
+    url='https://docs.terrychan.org/tkitreadability/',
     # install_requires=read_requirements('requirements.txt'),  # 指定需要安装的依赖
     long_description=long_description,
     long_description_content_type="text/markdown",
     install_requires=[
         'html2text==2020.1.16',
-        'readability_lxml==0.8.1'
+        'readability_lxml==0.8.1',
+        'Markdown==3.4.1'
 
 
     ],
