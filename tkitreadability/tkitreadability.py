@@ -14,7 +14,7 @@ class tkitReadability:
     """
     一个正文提取类，优化提取流程
     >>> tkitＲeadability()
-    
+
     """
 
     def __init__(self):
@@ -66,15 +66,17 @@ class tkitReadability:
         text_maker.images_to_alt = images_to_alt
         text_maker.images_as_html = images_as_html
         text_maker.images_with_size = images_with_size
-        text_maker.google_doc=True
-        text_maker.single_line_break=True  #在块元素之后使用单个换行符而不是两个。
-        text_maker.ignore_emphasis=ignore_emphasis
+        text_maker.google_doc = True
+        text_maker.single_line_break = False  # 在块元素之后使用单个换行符而不是两个。
+        text_maker.ignore_emphasis = ignore_emphasis
+        text_maker.body_width = False  # 是否自动折行
         # html = function_to_get_some_html()
         text = text_maker.handle(html)
         # text=self.remove_HTML_tag('img',text)
         # print(text)
         return text
-    def html2MarkDown(self,**kwargs):
+
+    def html2MarkDown(self, **kwargs):
         """从html中提取正文
         继承自  https://pypi.org/project/html2text/
         更多参数
@@ -99,16 +101,13 @@ class tkitReadability:
         """
         return markdown.markdown(text)
 
-
-
-
     def remove_HTML_tag(self, tag, string):
         """删除特定的标签
 
         # 删除掉图片
         >>> tag ='img'
         >>> string ='''              '''
-   
+
 
 
         >>> remove_HTML_tag(tag, string)
@@ -179,16 +178,16 @@ class tkitReadability:
 
 if __name__ == '__main__':
     html = """
-    
+
             <div class="full-component-wrapper">
-            
+
                     <div class="component component--text-image image-position--right" data-id="45290" data-type="c_sideimagetext_ttt">
           <div class="text-image--component-wrapper twb-container">
             <div class="text-image--content-wrapper row">
-        
-            
+
+
                       <div class="text-image--image col-12 col-xl-7 order-2 order-xl-3">
-                  
+
                     <div class="field field--name-field-c-image field--type-entity-reference field--label-hidden field__item">   
                      <picture>
                           <source srcset="/sites/default/files/styles/ttt_image_690/public/2021-07/border-collie.webp?itok=1oyChjVg 2x" media="all and (min-width: 1140px)" type="image/webp">
@@ -202,19 +201,19 @@ if __name__ == '__main__':
                       <source srcset="/sites/default/files/styles/ttt_image_510/public/2021-07/border-collie.jpg?itok=jhilnwqZ 1x" media="all and (min-width: 576px)" type="image/jpeg">
                       <source srcset="/sites/default/files/styles/ttt_image_510/public/2021-07/border-collie.jpg?itok=jhilnwqZ 1x" type="image/jpeg">
                           <img src="/sites/default/files/styles/ttt_image_510/public/2021-07/border-collie.jpg?itok=jhilnwqZ" alt="Border Collie" typeof="foaf:Image" loading="lazy">
-        
+
           </picture>
-        
+
         </div>
-              
+
                 </div>
         <img src="/sites/default/files/styles/ttt_image_510/public/2021-07/border-collie.jpg?itok=jhilnwqZ" alt="Border Collie" typeof="foaf:Image" loading="lazy">
                 <div class="text-image--text-wrapper col-12 col-xl-5 order-3 order-xl-2">
-                  
+
                   <div class="text-image--text">
-                    
+
                     <div class="clearfix text-formatted field field--name-field-c-sideimagetext-summary field--type-text-long field--label-hidden field__item"><h2>Pet Card</h2>
-        
+
         <ul>
             <li><strong>Living Considerations:</strong> Not hypoallergenic, suitable for apartment living, good with older children</li>
             <li><strong>Size:</strong> Medium</li>
@@ -227,21 +226,21 @@ if __name__ == '__main__':
             <li><strong>Indoor/Outdoor:</strong> Both</li>
         </ul>
         </div>
-              
+
                   </div>
-        
+
                           </div>
                   </div>
           </div>
         </div>
-        
-        
-        
-              
-        
+
+
+
+
+
               </div>
-    
-    
+
+
     """
     Readability = tkitReadability()
     content = Readability.html2text(html)
