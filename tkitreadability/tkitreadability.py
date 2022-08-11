@@ -8,7 +8,16 @@ import re
 这是一个提取正文的类
 
 """
+def get_markdown_images(text):
+    """
+    从markdown中提取图片
 
+    :param text:
+    :return:
+    """
+    image_arr = re.findall(r'(?:!\[(.*?)\]\((.*?)\))', text)  # 提最述与rul
+    # print("image_arr", image_arr)
+    return image_arr
 
 class tkitReadability:
     """
