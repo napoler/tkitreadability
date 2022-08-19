@@ -24,7 +24,7 @@ def read_requirements(filename):
 long_description=read_file("README.md")
 setup(
     name='tkitreadability', #修改包名字
-    version='0.0.0.5.1',
+    version='0.0.0.5.2',
     description='Terry toolkit tkitreadability',
     author='Terry Chan',
     author_email='napoler2008@gmail.com',

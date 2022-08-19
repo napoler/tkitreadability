@@ -85,7 +85,14 @@ class tkitReadability:
         # print(text)
         return text
 
-    def html2MarkDown(self, **kwargs):
+    def html2markdown(self, html,
+                  ignore_links=True,
+                  bypass_tables=True,  # 用 HTML 格式而不是 Markdown 语法来格式化表格。
+                  ignore_images=False,
+                  images_to_alt=False,
+                  images_as_html=False,
+                  images_with_size=True,
+                  ignore_emphasis=True, **kwargs):
         """从html中提取正文
         继承自  https://pypi.org/project/html2text/
         更多参数
@@ -93,15 +100,25 @@ class tkitReadability:
 
 
 
-        >>> html2text(html,
-                  ignore_links=True,
-                  bypass_tables=False,
-                  ignore_images=True,
-                  images_to_alt=True)
+        >>>
 
 
         """
-        return self.html2text(**kwargs)
+        text_maker = html2text.HTML2Text()
+        text_maker.ignore_links = ignore_links
+        text_maker.bypass_tables = bypass_tables
+        text_maker.ignore_images = ignore_images
+        text_maker.images_to_alt = images_to_alt
+        text_maker.images_as_html = images_as_html
+        text_maker.images_with_size = images_with_size
+        text_maker.google_doc = True
+        text_maker.single_line_break = False  # 在块元素之后使用单个换行符而不是两个。
+        text_maker.ignore_emphasis = ignore_emphasis
+        text_maker.body_width = False  # 是否自动折行
+        # html = function_to_get_some_html()
+        text = text_maker.handle(html)
+        # return self.html2text(**kwargs)
+        return text
 
     def markdown2Html(self, text, **kwargs):
         """
