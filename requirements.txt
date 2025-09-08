@@ -2,3 +2,4 @@ html2text==2020.1.16
 Markdown==3.4.1
 readability_lxml==0.8.1
 setuptools==57.0.0
+lxml[html_clean]==0.4.2
